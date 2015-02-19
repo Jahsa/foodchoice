@@ -17,22 +17,22 @@
 (enable-console-print!)
 
 
-;cljs-time formatters
+;;; Cljs-time formatters.
 (def built-in-formatter (formatters :basic-date-time))
 (def custom-formatter (formatter "EEEE MM/dd/yy"))
 
 (def today (unparse custom-formatter (from-date (js/Date.) )))
 
 
-;increase count function and reset count function
+;;; Increase count function and reset count function.
 (def click-count (atom 0))
 
-;adding a div for css on count number
+;;; Added a div for css on count number.
 (defn show-count []
 	[:div.showNum @click-count
 	])
 
-;banner with date and count
+;;; Banner with date and count.
 (defn info [] 
 	[:div.text "Dinner Count for " today ": " [show-count] ]
 	)
@@ -49,8 +49,8 @@
 
 
 
-; iterate through vector of food types, placing into divs
-(def food-types [["Chinese"] ["Indian"] ["Japanese"] ["Vietnamese"] ["French"] ["American"] ["Ethiopian"]])
+;;; Iterate through vector of food types, placing into divs.
+(def food-types [["Chinese"] ["Indian"] ["Japanese"] ["Vietnamese"] ["French"] ["American"] ["Ethiopian"] ["Korean"] ["Salad"] ["Air"]["Fruit"]["Water"]])
 
 
 (def v [:div])
@@ -63,7 +63,7 @@
 	)
 
 (defn food-display [] 
-	[:div.container {:type "button" 
+	[:div.grid {:type "button" 
 		    :on-click (fn [e] (swap! click-count inc))}
 		[items]
 
@@ -71,7 +71,7 @@
 )
 
 
-;main app render 
+;;; Main app render.
 (defn app-view []
 	[:div
 		[count-increase]
@@ -84,7 +84,7 @@
 
 
 
-;render components
+;;; Render components to JS/HTML.
 (reagent/render-component [app-view] (.getElementById js/document "app"))
 
 (reagent/render-component [info] (aget (.getElementsByClassName js/document "container") 0))

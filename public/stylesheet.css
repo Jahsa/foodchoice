@@ -2,26 +2,11 @@
 	background-color: #ebebeb;
 	width: 100%;
 	height: 100px;
-	margin: 0 auto;
-	margin-top: 20px;
 
     
 }
 
-div.items {
-	padding: 20px;
-	display: inline-block;
-	width: 8%;
 
-    text-align: center;
-    background-color: white;
-	border: 1px solid #07a5d8;
-	color: #00a5d9;
-	margin: 15px;
-	overflow: auto;
-	border-radius: 6px;
-
-}
 
 .text {
 	font-family: HelveticaNeue, Helvetica;
@@ -79,5 +64,35 @@ html,body {
 	text-shadow: none;
 	box-shadow: none;
 	width: 100%;
+}
+
+div.items {
+	padding: 15px;
+	display: inline-block;
+	width: 15%;
+
+
+    text-align: center;
+    background-color: white;
+	border: 1px solid #07a5d8;
+	color: #00a5d9;
+	margin: 10px;
+	
+	border-radius: 6px;
+
+}
+
+div.grid {
+    width: 600px;
+    height: 600px;
+    margin: auto;
+    vertical-align: middle;
+    text-align: middle;
+
+}
+div.grid div {
+    margin-top: 20px;
+    
+    
 }
 
